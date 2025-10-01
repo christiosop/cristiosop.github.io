@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A FINE LINE CUSTOM TATTOO STUDIO, LLC — Billings, MT</title>
+  <meta name="description" content="A FINE LINE CUSTOM TATTOO STUDIO, LLC — custom tattoos, single-needle fine line, blackwork, and illustrative pieces in Billings, Montana. Appointment-first, sterilization forward, artist-led studio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --bg-2:#101010;
+      --ink:#ffffff;
+      --ink-dim:#d6d6d6;
+      --ink-muted:#a8a8a8;
+      --accent:#f1f1f1;
+      --stroke:rgba(255,255,255,.08);
+      --stroke-2:rgba(255,255,255,.14);
+      --brand:#ffffff;
+      --glow:0 10px 30px rgba(0,0,0,.55);
+      --max:1120px;
+      --radius:16px;
+    }
+    /* Reset / base */
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif}
+    img{max-width:100%;display:block}
+    a{color:var(--ink);text-decoration:none}
+    p{line-height:1.7}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+    /* Top bar */
+    header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(10,10,10,.78);backdrop-filter:saturate(130%) blur(8px);
+      border-bottom:1px solid var(--stroke)
+    }
+    .nav{display:flex;align-items:center;gap:18px;padding:14px 0}
+    .logo{
+      width:42px;height:42px;border-radius:8px;
+      background:
+        radial-gradient(80% 80% at 30% 30%, #fff 0%, #ddd 25%, #aaa 40%, #0000 60%),
+        linear-gradient(180deg,#fff, #cfcfcf);
+      mix-blend-lighten;
+      filter:grayscale(100%) contrast(120%);
+      border:1px solid var(--stroke-2);
+      box-shadow:inset 0 0 18px rgba(0,0,0,.35);
+    }
+    .brand{
+      display:flex;flex-direction:column;line-height:1
+    }
+    .brand .top{font-family:'Playfair Display',serif;letter-spacing:.25em}
+    .brand .bottom{font-size:12px;color:var(--ink-muted)}
+    nav.links{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+    nav.links a{padding:8px 12px;border-radius:999px;border:1px solid transparent;color:#eaeaea}
+    nav.links a:hover{border-color:var(--stroke);background:#141414}
+    .cta{
+      margin-left:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--stroke-2);
+      background:#111;border:1px solid var(--stroke-2);box-shadow:var(--glow);color:#fff;font-weight:700
+    }
+    /* Hero */
+    .hero{
+      position:relative;isolation:isolate
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+      filter:grayscale(100%) contrast(105%) brightness(70%);
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.65) 40%, rgba(10,10,10,.9) 80%, #0a0a0a 100%);
+      z-index:-1
+    }
+    .hero .wrap{padding-top:110px;padding-bottom:110px}
+    .hero .kicker{
+      font-family:'Playfair Display',serif;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:#d0d0d0
+    }
+    .hero h1{
+      margin:10px 0 12px;font-size:60px;line-height:1.06;
+      letter-spacing:.08em;text-transform:uppercase;font-family:'Playfair Display',serif
+    }
+    .hero p.lead{
+      max-width:78ch;color:#e3e3e3;font-size:18px
+    }
+    .hero .buttons{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;border:1px solid var(--stroke-2);background:#111
+    }
+    .btn.primary{background:#fff;color:#0a0a0a;border-color:#fff;font-weight:800}
+    .btn.secondary{color:#f0f0f0}
+    .meta{
+      margin-top:16px;display:flex;gap:14px;flex-wrap:wrap;color:#c8c8c8;font-size:12px
+    }
+    .dot{width:6px;height:6px;border-radius:999px;background:#fff;box-shadow:0 0 12px #fff}
+    /* Section scaffold */
+    section{padding:66px 0;background:var(--bg)}
+    .section-head{margin-bottom:22px}
+    .eyebrow{letter-spacing:.3em;text-transform:uppercase;font-size:11px;color:#b9b9b9;font-family:'Playfair Display',serif}
+    .title{font-family:'Playfair Display',serif;font-size:32px;letter-spacing:.08em;text-transform:uppercase;margin:6px 0}
+    .subtitle{color:#cfcfcf;max-width:80ch}
+    /* Panels */
+    .panel{
+      background:linear-gradient(180deg,#111 0%, #0b0b0b 100%);
+      border:1px solid var(--stroke);border-radius:var(--radius);box-shadow:var(--glow)
+    }
+    /* About grid */
+    .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
+    .about .photo{
+      aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke)
+    }
+    .about .photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(115%)}
+    .quote{
+      margin-top:14px;padding:14px;border-left:3px solid #fff;background:#121212;color:#ddd;border-radius:8px;border:1px solid var(--stroke)
+    }
+    /* Three columns */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:18px;border:1px solid var(--stroke);border-radius:var(--radius);background:#101010}
+    .card h3{margin:6px 0 10px;text-transform:uppercase;letter-spacing:.12em;font-family:'Playfair Display',serif}
+    .card p{color:#d5d5d5}
+    .chip{display:inline-block;border:1px dashed var(--stroke-2);border-radius:999px;padding:6px 10px;font-size:11px;color:#c6c6c6;background:#121212}
+    .divider{height:1px;background:var(--stroke);margin:10px 0}
+    /* Icon circles (monochrome) */
+    .icon{
+      width:48px;height:48px;border-radius:999px;
+      background:radial-gradient(circle at 40% 30%, #fff, #aaa 40%, #000 80%);
+      border:1px solid var(--stroke-2);filter:grayscale(100%) contrast(130%);box-shadow:inset 0 0 18px rgba(0,0,0,.35)
+    }
+    /* Process */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:st}
+    .step{position:relative;padding:18px;border:1px dashed var(--stroke-2);background:#101010;border-radius:var(--radius)}
+    .step::before{
+      counter-increment:st;content:counter(st);
+      position:absolute;top:-12px;left:-12px;width:34px;height:34px;border-radius:999px;
+      display:grid;place-items:center;background:#fff;color:#000;font-weight:900;border:1px solid var(--stroke-2)
+    }
+    /* Gallery */
+    .mosaic{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .tile{position:relative;overflow:hidden;border-radius:10px;border:1px solid var(--stroke)}
+    .tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(115%) brightness(85%);transition:transform .4s ease}
+    .tile:hover img{transform:scale(1.04)}
+    .tile.tall{grid-row:span 2}
+    .tile.wide{grid-column:span 2}
+    .tile.big{grid-column:span 2;grid-row:span 2}
+    /* Contact */
+    .contact .grid-2{align-items:start}
+    form{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px
+    }
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field label{font-size:12px;color:#cfcfcf}
+    .field input,.field textarea,.field select{
+      background:#111;border:1px solid var(--stroke-2);border-radius:10px;color:#f6f6f6;padding:12px;outline:none
+    }
+    .field textarea{min-height:120px;grid-column:1/-1}
+    .actions{grid-column:1/-1;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .muted{color:#b7b7b7}
+    .success{display:none;margin-top:10px;padding:12px;border-radius:10px;background:#0e1512;color:#d3fff3;border:1px solid #1f7a6b}
+    /* Footer */
+    footer{padding:38px 0;border-top:1px solid var(--stroke);background:#0a0a0a}
+    .footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    .small{font-size:12px;color:#b9b9b9}
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid-2,.grid-3,.steps{grid-template-columns:1fr}
+      nav.links{display:none}
+      .mosaic{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <!-- =========================================================
+       NAV BAR
+  ========================================================== -->
+  <header>
+    <div class="wrap nav">
+      <div class="logo" aria-hidden="true"></div>
+      <div class="brand">
+        <div class="top">A FINE LINE</div>
+        <div class="bottom">Custom Tattoo Studio, LLC — Billings, MT</div>
+      </div>
+      <nav class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Studio</a>
+        <a href="#services">Work</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="#contact">Book consult</a>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO
+  ========================================================== -->
+  <section id="home" class="hero">
+    <div class="wrap">
+      <div class="kicker">Tattoo studio • Billings, Montana</div>
+      <h1>A Fine Line Between Skin & Story</h1>
+      <p class="lead">
+        We specialize in single-needle fine line, blackwork, and minimal illustrative tattoos built with slow precision.
+        From first sketch to aftercare, every step is designed to preserve crisp detail and long-term clarity. The studio
+        runs by appointment with sterile workflows and artist-led design sessions.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#services">View styles</a>
+        <a class="btn secondary" href="#contact">Request availability</a>
+      </div>
+      <div class="meta">
+        <span class="dot"></span> OSHA-aligned sterilization
+        <span class="dot"></span> Disposable single-use where possible
+        <span class="dot"></span> Patch-test friendly inks
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ABOUT
+  ========================================================== -->
+  <section id="about" class="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Who We Are</div>
+        <h2 class="title">A Studio Built for Patience, Detail, and Care</h2>
+        <div class="subtitle">
+          Personal Care Services • Other Services (except Public Administration) • Tattoo parlor
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel" style="padding:18px">
+          <p>
+            A FINE LINE CUSTOM TATTOO STUDIO, LLC operates on a simple belief: the most compelling tattoos are
+            thoughtful collaborations. We book fewer sessions each day so our artists can draw, explain, and iterate
+            without a stopwatch running in the background.
+          </p>
+          <p>
+            Every appointment begins with a sterile setup documented on a printed checklist. Needles, tubes, grip covers,
+            and razors are single-use. Surfaces are wrapped and disinfected between clients; instruments for non-disposable
+            tasks are ultrasonically cleaned then packaged and autoclaved.
+          </p>
+          <p>
+            Design time is part of the appointment: we trace anatomy, test scale on skin, and ensure the composition will
+            age gracefully in the real world (not just on paper). We note sun exposure, movement, and skin texture before
+            recommending line weight and spacing.
+          </p>
+          <p>
+            Aftercare is individualized. You’ll leave with a printed card and a QR code leading to your artist’s aftercare
+            plan, product recommendations available locally in Billings, and a week-by-week photo guideline for proper healing.
+          </p>
+          <p>
+            The result is a tattoo that reads clearly today and a decade from now—delivered in an environment that treats
+            your time, skin, and safety with the same respect as the art.
+          </p>
+          <div class="quote">“Clean linework is a promise: steady hand, proper needle depth, and zero rush.”</div>
+        </div>
+        <div class="photo">
+         <img alt="Minimal symbol" src="main15.jpg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SERVICES
+  ========================================================== -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What We Ink</div>
+        <h2 class="title">Signature Styles & Studio Work</h2>
+        <div class="subtitle">Three core offerings with clear expectations, pricing logic, and healing guidance.</div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon" aria-hidden="true"></div>
+          <span class="chip">Single-Needle • Fine Line</span>
+          <h3>Minimal & Architectural Linework</h3>
+          <p>
+            For names, micro-symbols, and delicate motifs that rely on precision more than fill. We measure spacing
+            carefully to preserve legibility as the skin softens with time. Artists use stabilized machines and slow passes.
+          </p>
+          <p>
+            Placement tests are done with multiple stencil sizes; we choose the size that will read well at conversation
+            distance. Aftercare emphasizes gentle wash, breathable cover, and avoiding movement stress for 48 hours.
+          </p>
+          <p>
+            Estimates are transparent: we price by projected needle time plus design, not by the square inch. Touch-ups
+            within 8 weeks are complimentary for this category.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true"></div>
+          <span class="chip">Blackwork • Negative Space</span>
+          <h3>Graphic Fields with Crisp Edges</h3>
+          <p>
+            Bold solids, ornamental bands, and geometric builds where saturation matters. We layer ink in controlled passes
+            to avoid blowout, and we map stretch directions to keep lines straight during movement.
+          </p>
+          <p>
+            Sessions run in 2–3 hour blocks with breaks to assess saturation and swelling. We photograph under polarized
+            light to check for holidays and even fill before bandaging.
+          </p>
+          <p>
+            For bigger work we plan session routes that limit trauma per area. Healing includes fragrance-free emollients
+            and sun discipline for the first four weeks.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true"></div>
+          <span class="chip">Illustrative • Botanical</span>
+          <h3>Sketch-Born Imagery with Skin in Mind</h3>
+          <p>
+            Custom florals, fauna, and narrative pieces built from pencil studies. We use taper groupings to sculpt line
+            weight and build gentle stipple shading that settles smooth.
+          </p>
+          <p>
+            Reference is sourced ethically; we redraw and simplify to ensure the piece reads from five feet away. Color is
+            available, but we tend to use restrained palettes that heal clean in Montana’s dry climate.
+          </p>
+          <p>
+            Expect one collaborative sketch round before the appointment and a quick transfer review on the day of.
+          </p>
+        </article>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-head">
+        <div class="eyebrow">Showcase</div>
+        <h2 class="title">Recent Work in Monochrome</h2>
+        <div class="subtitle">A small, fast-loading mosaic. Tap any tile in studio to see healed photos.</div>
+      </div>
+
+     <div class="mosaic">
+  <figure class="tile big">
+    <img alt="Fine line torso composition" src="main1.jpg">
+  </figure>
+  <figure class="tile tall">
+    <img alt="Hand tattoo closeup" src="main2.jpg">
+  </figure>
+  <figure class="tile">
+    <img alt="Botanical linework" src="main3.jpg">
+  </figure>
+  <figure class="tile wide">
+    <img alt="Blackwork stripe" src="main4.jpg">
+  </figure>
+  <figure class="tile">
+    <img alt="Minimal symbol" src="main5.jpg">
+  </figure>
+  <figure class="tile tall">
+    <img alt="Neck linework" src="main6.jpg">
+  </figure>
+  <figure class="tile">
+    <img alt="Stipple shading" src="main7.jpg">
+  </figure>
+  <figure class="tile">
+    <img alt="Geometric wrist" src="main8.jpg">
+  </figure>
+  <figure class="tile wide">
+    <img alt="Back piece draft" src="main9.jpg">
+  </figure>
+  <figure class="tile">
+    <img alt="Delicate script" src="main10.jpg">
+  </figure>
+  <figure class="tile">
+    <img alt="Band blackwork" src="main11.jpg">
+  </figure>
+  <figure class="tile tall">
+    <img alt="Micro tattoo behind ear" src="main12.jpg">
+  </figure>
+</div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ADVANTAGES / WHY US
+  ========================================================== -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why Book Here</div>
+        <h2 class="title">What Sets Our Studio Apart</h2>
+        <div class="subtitle">Three practical advantages you’ll notice from the first consult.</div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Artist-Led Planning</h3>
+          <p>
+            Your artist handles the consult, drawing, and tattoo. No front-desk hand-offs. This preserves intent and
+            ensures line weight, anatomy, and placement are discussed with the person who will actually ink you.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Sterile Workflows</h3>
+          <p>
+            We use hospital-grade disinfectants, single-use consumables, and documented autoclave cycles. Instruments are
+            tracked by lot and cycle numbers. You’ll see the sterile pouches opened in front of you.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Clarity That Lasts</h3>
+          <p>
+            We test size and spacing to avoid future blurring. Fine line doesn’t mean faint—our lines are mapped to your
+            skin so they heal legible, not wispy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROCESS
+  ========================================================== -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How We Work</div>
+        <h2 class="title">Three Steps from Idea to Healed</h2>
+        <div class="subtitle">Clear milestones keep the day predictable and calm.</div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <h3>01 — Consult & Sketch</h3>
+          <p>
+            Share reference, meaning, and placement. We sketch on paper and on skin to find size, orientation,
+            and line weights that will heal clean. A budget and session length are agreed before booking.
+          </p>
+        </div>
+        <div class="step">
+          <h3>02 — Prep & Tattoo</h3>
+          <p>
+            Sterile setup, stencil transfer, and final adjustments. We work slow, communicate needle changes,
+            and check saturation under polarized light before bandaging.
+          </p>
+        </div>
+        <div class="step">
+          <h3>03 — Aftercare & Check-In</h3>
+          <p>
+            You get a printed aftercare card and a QR code to your artist’s plan. We check photos at days 3, 7, and 21.
+            Complimentary touch-ups within eight weeks for qualifying pieces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTACT
+  ========================================================== -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Start the Conversation</div>
+        <h2 class="title">Request Availability or a Price Range</h2>
+        <div class="subtitle">Use the phrasing below to help us scope quickly. We reply within one business day.</div>
+      </div>
+
+      <div class="grid-2">
+        <form class="panel" id="form" style="padding:18px" aria-label="Contact form">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" placeholder="e.g., Jordan Lee" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" placeholder="For same-day questions">
+          </div>
+          <div class="field">
+            <label for="style">Preferred style</label>
+            <select id="style" name="style">
+              <option>Fine line / single-needle</option>
+              <option>Blackwork / geometric</option>
+              <option>Illustrative / botanical</option>
+              <option>Not sure — open to advice</option>
+            </select>
+          </div>
+          <div class="field" style="grid-column:1/-1">
+            <label for="msg">Tell us the idea</label>
+            <textarea id="msg" name="msg" placeholder="Placement, approximate size (inches), any deadlines, links to reference."></textarea>
+          </div>
+          <div class="actions">
+            <button class="btn primary" type="submit">Send request</button>
+            <button class="btn" type="reset">Reset</button>
+            <span class="muted">We only use this information to respond to your inquiry.</span>
+          </div>
+          <div id="ok" class="success">Thanks! Your message was submitted successfully. We’ll be in touch shortly.</div>
+        </form>
+
+        <div class="panel" style="padding:18px">
+          <h3 style="margin:0 0 8px;text-transform:uppercase;letter-spacing:.12em;font-family:'Playfair Display',serif">Helpful Phrases</h3>
+          <ul class="muted" style="line-height:1.9;padding-left:18px;margin:0">
+            <li>“Fine line script on inner forearm, 3–4 inches, healed photo check welcome.”</li>
+            <li>“Black band around calf, 1 inch wide; want super even fill and clean edges.”</li>
+            <li>“Botanical shoulder piece that wraps but stays high enough for sleeves.”</li>
+            <li>“I have a previous micro-tattoo that needs sharpening—can you evaluate?”</li>
+            <li>“Traveling through Billings on specific dates—seeking availability window.”</li>
+          </ul>
+
+          <div class="divider"></div>
+          <p class="muted" style="margin:0">
+            Email: <a href="mailto:christopherness@customtattoostudio.org">christopherness@customtattoostudio.org</a><br>
+            Address: 926 Main St Ste 4, Billings, MT 59105
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTACTS STRIP
+  ========================================================== -->
+  <section>
+    <div class="wrap">
+      <div class="panel" style="padding:18px">
+        <div class="grid-2">
+          <div>
+            <h3 style="margin:0 0 8px;text-transform:uppercase;letter-spacing:.12em;font-family:'Playfair Display',serif">Studio Address</h3>
+            <p style="margin:0">A FINE LINE CUSTOM TATTOO STUDIO, LLC<br>926 Main St Ste 4, Billings, MT 59105</p>
+          </div>
+          <div>
+            <h3 style="margin:0 0 8px;text-transform:uppercase;letter-spacing:.12em;font-family:'Playfair Display',serif">Email</h3>
+            <p style="margin:0"><a href="mailto:christopherness@customtattoostudio.org">christopherness@customtattoostudio.org</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer>
+    <div class="wrap">
+      <div class="footgrid">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="logo"></div>
+            <div style="font-weight:900;letter-spacing:.12em">A FINE LINE</div>
+          </div>
+          <p class="small" style="margin-top:10px">
+            Personal Care Services • Tattoo parlor • Billings, Montana. We accept appointment-first bookings and maintain
+            a quiet studio focused on precision work.
+          </p>
+        </div>
+        <div>
+          <h4 style="margin:0 0 10px">Navigate</h4>
+          <p class="small"><a href="#services">Styles</a><br><a href="#why">Why us</a><br><a href="#process">Process</a><br><a href="#contact">Contact</a></p>
+        </div>
+        <div>
+          <h4 style="margin:0 0 10px">Contact</h4>
+          <p class="small">926 Main St Ste 4, Billings, MT 59105<br>
+            <a href="mailto:christopherness@customtattoostudio.org">christopherness@customtattoostudio.org</a></p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="small">© <span id="y"></span> A FINE LINE CUSTOM TATTOO STUDIO, LLC. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // lightweight form success
+    const form = document.getElementById('form');
+    const ok = document.getElementById('ok');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      ok.style.display = 'block';
+      form.scrollIntoView({behavior:'smooth', block:'start'});
+      form.reset();
+      setTimeout(()=>{ ok.style.display='none'; }, 7000);
+    });
+  </script>
+</body>
+</html>
